@@ -1,3 +1,3 @@
 public interface AdminLibraryAccess {
-    public void addBook(Book b);
+    void addBook(Book b);
 }
