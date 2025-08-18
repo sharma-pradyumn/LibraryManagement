@@ -1,9 +1,9 @@
 public interface MemberLibraryAccess {
 
-    public boolean borrowBook(String bookTitle);
+    public Book borrowBook(String bookTitle, Long memberId);
 
-    public boolean returnBook(Book book);
+    void returnBook(Book book);
 
-    public boolean isBookNameAvailable(String bookTitle);
+    boolean isBookNameAvailable(String bookTitle);
 
 }

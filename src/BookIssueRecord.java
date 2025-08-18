@@ -7,10 +7,10 @@ public class BookIssueRecord {
     private final long bookId;
     private final long memberId;
 
-    public BookIssueRecord(LocalDate idate, long bId, long mId) {
-        issuedDate = idate;
-        bookId = bId;
-        memberId = mId;
+    public BookIssueRecord(LocalDate _issueDate, long _bookId, long _memberId) {
+        issuedDate = _issueDate;
+        bookId = _bookId;
+        memberId = _memberId;
         dueDate = issuedDate.plusDays(BORROW_PERIOD_DAYS);
     }
 
