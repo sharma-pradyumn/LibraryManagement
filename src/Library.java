@@ -15,6 +15,8 @@ public class Library implements MemberLibraryAccess {
 
     private final HashMap<Long, Member> memberMap = new HashMap<>(); // memberId -> member for all members of the Lib
 
+    private Admin admin;
+
     public Book borrowBook(String bookTitle, Long memberId) {
 
         // check if member is associated with this library
@@ -107,6 +109,10 @@ public class Library implements MemberLibraryAccess {
             return;
         }
         memberMap.put(member.getId(), member);
+    }
+
+    public void addAdmin(Admin _admin) {
+        admin = _admin;
     }
 
     public void removeLibrary(Member member) {

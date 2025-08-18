@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Member extends Person {
-    private Library library;
+    private MemberLibraryAccess library;
 
     public Member(String n, String e) {
         super(n, e);
