@@ -30,7 +30,7 @@ public class Library implements MemberLibraryAccess {
         }
         for (Long bookId : bookIds) {
             if (issuedBookMap.get(bookId) == null) {
-                BookIssueRecord issueRecord = new BookIssueRecord(LocalDate.now(), bookId, memberId);
+                BookIssueRecord issueRecord = new BookIssueRecord(LocalDate.now(), bookId, memberId, bookMap.get(bookId).getName());
                 currentlyIssuedMemberMap.computeIfAbsent(memberId, k -> new ArrayList<>()).add(issueRecord);
                 issuedBookMap.put(bookId, issueRecord);
                 return bookMap.get(bookId);

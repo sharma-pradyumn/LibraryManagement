@@ -6,11 +6,14 @@ public class BookIssueRecord {
     private final LocalDate dueDate;
     private final long bookId;
     private final long memberId;
+    private final String bookName; // <-- added
 
-    public BookIssueRecord(LocalDate _issueDate, long _bookId, long _memberId) {
+
+    public BookIssueRecord(LocalDate _issueDate, long _bookId, long _memberId, String _bookName) {
         issuedDate = _issueDate;
         bookId = _bookId;
         memberId = _memberId;
+        bookName = _bookName;
         dueDate = issuedDate.plusDays(BORROW_PERIOD_DAYS);
     }
 
@@ -24,6 +27,10 @@ public class BookIssueRecord {
 
     public LocalDate getIssuedDate() {
         return issuedDate;
+    }
+
+    public String getBookName() {
+        return bookName;
     }
 
     public LocalDate getDueDate() {
